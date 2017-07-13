@@ -3,17 +3,29 @@ var roman = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
 
 
 var romanNumeral = function(number) {
+  // this for loop will equal even values and their roman counterpart
   for (i = 0; i < values.length; i++) {
-    for (j = 0; j < roman.length; i++) {
       if (number === values[i]) {
         return roman[i];
+      } else if (number === '2') {
+        return "II";
+      } else if (number === '3') {
+        return "III";
+      } else if (number === '4') {
+        return "IV";
+      } else if  (number === '6') {
+        return "VI";
+      } else if (number === '7') {
+        return "VII";
+      } else if (number === '8') {
+        return "VIII";
+      } else if (number === '9') {
+        return "IX";
       }
-      // } else if (number[1] === values[i]) {
-      //   return roman[1];
-      // }
-    }
   }
+
 }
+
 
 
 $(document).ready(function() {
