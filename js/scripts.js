@@ -18,26 +18,33 @@ var iFour = "IIII";
 var romanNumeral = function(number) {
   var numberInt = parseInt(number);
   for (i = 0; i < values.length; i++) {
-      while (number >= values[i]) {
-        var firstValue = values[i];
-        romanArr.push(roman[i]);
-        var number = (number - firstValue);
-        var romanString = romanArr.join('');
+    while (numberInt >= values[i]) {
+      var firstNumber = values[i];
+      romanArr.push(roman[i]);
+      var numberInt = (numberInt - firstNumber);
+
+    }
+    var romanString = romanArr.join('');
+  }
+  if (romanString.includes(xFour)){
+    console.log("worked");
+
+    for (j = values.length - 1; j > 0; --j) {
+      while (number <= values[j] && number !== 0) {
+        var secValue = values[j];
+        romanArr2.push(roman[j]);
+        var number = (secValue - number);
+        j = (values.length - 1);
       }
     }
-    if (romanString.includes(xFour)){
-      console.log("worked");
-      for (j = 6; j >= values.length; j--) {
-        while (number <= values[j]) {
-          var secValue = values[j];
-          romanArr2.push(roman[j]);
-          var number = (number - secValue);
-        }
-      }
   }
+  if (romanArr2.length === 0) {
     return romanArr.join('');
-    return romanArr2.join('');
+  } else {
+  return romanArr2.join('');
   }
+}
+
 
 
 
